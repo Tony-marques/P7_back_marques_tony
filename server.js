@@ -22,7 +22,7 @@ const corsOptions = {
   // Uniquement les requêtes venant de cette source
   origin: "http://localhost:3000",
 };
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Définit divers en-têtes pour la sécurité
 app.use(
