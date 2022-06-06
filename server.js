@@ -40,25 +40,25 @@ app.use("/api/post", postRoute);
 app.use("/api/comment", commentRoute);
 app.use("/api/like", likeRoute);
 
-const https = require("https");
-const http = require("http");
-const fs = require("fs");
+// const https = require("https");
+// const http = require("http");
+// const fs = require("fs");
 
-const key = fs.readFileSync(__dirname + "/cert/key.pem");
-const cert = fs.readFileSync(__dirname + "/cert/cert.pem");
+// const key = fs.readFileSync(__dirname + "/cert/key.pem");
+// const cert = fs.readFileSync(__dirname + "/cert/cert.pem");
 
-const options = {
-  key: key,
-  cert: cert,
-};
+// const options = {
+//   key: key,
+//   cert: cert,
+// };
 
-const httpServer = http.createServer(app);
-const httpsServer = https.createServer(options, app);
+// const httpServer = http.createServer(app);
+// const httpsServer = https.createServer(options, app);
 
-httpServer.listen(4500, () => {
-  console.log(`Serveur lancé sur http://localhost:${4500}`);
+app.listen(PORT, () => {
+  console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
 // Ecoutez le serveur
-httpsServer.listen(5000, () => {
-  console.log(`Serveur lancé sur https://localhost:${5000}`);
-});
+// httpsServer.listen(5000, () => {
+//   console.log(`Serveur lancé sur https://localhost:${5000}`);
+// });
