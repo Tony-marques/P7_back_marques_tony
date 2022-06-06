@@ -20,16 +20,16 @@ app.use(express.urlencoded({ extended: true }));
 // Permet de définir les contrôles d'accès
 const corsOptions = {
   // Uniquement les requêtes venant de cette source
-  origin: "http://localhost:3000",
+  // origin: "http://localhost:3000",
 };
 app.use(cors());
 
 // Définit divers en-têtes pour la sécurité
-app.use(
-  helmet({
-    crossOriginResourcePolicy: false,
-  })
-);
+// app.use(
+//   helmet({
+//     crossOriginResourcePolicy: false,
+//   })
+// );
 
 // Permet d'accéder au fichier static
 app.use("/images", express.static(path.join(__dirname, "images")));
